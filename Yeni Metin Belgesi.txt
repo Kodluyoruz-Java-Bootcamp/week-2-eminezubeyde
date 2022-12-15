@@ -1,0 +1,57 @@
+Soru 2 Creational Design Patterns
+
+Creational Patterns, nesne yaratma mekanizmasıyla ilgilenen, uygulamamızda duruma uygun şekilde nesne yaratmaya çalışan tasarım kalıplarıdır. Yani uygulamada nesnelerin oluşturulmasından sorumludur. Yazılımımızda nesnelerin standart şekilde oluşturulması tasarım ve performans sorunlarına yol açabildiği için bu durumu önlemek için;
+Singleton,
+Factory,
+Abstract Factory,
+Builder,
+Prototype gibi yaratımsal tasarım desenleri geliştirilmiştir.
+
+SİNGLETON
+Singleton deseni, en basit tasarım modellerinden biridir.Bu desen bir nesnenin tek bir kere yaratıldığını kontrol eder.Bu sınıf, sınıf nesnesinin somutlaştırılmasına gerek kalmadan doğrudan erişilebilen tek nesnesine erişmenin bir yolunu sağlar. Bunu da Java’da ‘static’ keywordünü kullanarak sağlarız.
+
+Prototype Pattern
+Prototype Pattern, mevcut nesnenin bir klonunu oluşturmayı söyleyen bir prototip arayüzünün uygulanmasını içerir. Bu desenin, doğrudan nesne oluşturmanın pahalı olduğu durumlarda kullanılması önerilir. Örneğin, bir veritabanı işleminden sonra bir nesne oluşturulur ve bu nesne cachelenir(ön belleğe alınır). Daha sonraki isteklerde bu nesne üstünden clone oluşturulur. Veritabanı sorgularından kaynaklı yükü azaltmış oluruz.
+
+Abstract Factory Pattern
+Tek arayüz ile bir nesne ailesinin farklı platformlarda yaratılmasını olanaklı kılar. Bu sayade yazılım uygulaması farklı platfromlara davranış değişikliğine uğramadan taşınabilir. Soyut fabrika kalıbı, tek arayüz altında hangi somut sınıfların kullanıldığını saklar.
+
+Builder Pattern
+Karmaşık bir nesne grubunun tek arayüz üzerinden gerektiği kadar parça parça yaratılmasını sağlar. Kullanılmayan parçalar gereksiz yere yaratılarak kaynak harcamaz.
+
+SORU 4
+
+SPRING: Kurumsal alanda en çok kullanılan Java Framework’ü olarak Spring’i örnek verebiliriz. Spring Framework’ü hem .net hem de Java için geliştirilmiş Java EE uygulamaları yapmamızı kolaylaştıran harika bir Framework’tür. Bu framework model-view-controller katmanlarını kontrol ederek ihtiyacımız olan paket ve sınıfları ekleyebildiğimiz ve bu paketleri kullanabilmemizi sağlayan bir Framework’tür. Spring ile çok karmaşık uygulamaların yanında oldukça basit uygulamalar yapmak da mümkündür.
+
+JSF (Java Server Faces): Bir web sitesini Java ile yapmak mümkündür. Ancak Java Server Faces Framework’ü dinamik web sayfaları oluşturmamıza yaramaktadır. JSP kodları HTML dilinin içine yazılır ve kendine özel etiket sistemi vardır. Bu sayede HTML ile karışmadan kendi içinde güzel ve düzenli bir performans sunarak kaliteli siteler yapma konusunda yazılımcıya yardımcı olmaktadır.
+
+MAVEN: Bir proje geliştirirken proje içinde bir standart ve düzen oluşturmayı, geliştirme sürecini daha basitleştirmemizi sağlayan Java Framework’üdür. Geliştirdiğiniz projenin kütüphane bağımlılığını ve IDE bağımlılığını bu framework sayesinde ortadan kaldırabildiği gibi projenin daha kolay geliştirilmesi hakkında bize birçok kolaylık sağlamaktadır.
+
+HIBERNATE: Hibernate bir ORM kütüphanesidir. Veritabanı üzerinde yapılan işlemleri kolaylaştıran bu framework için Java sınıflarının veritabanı dönüşümünü yapıyor diyebiliriz. Aynı zamanda veri çekme ve veri sorgulama işlerinde de oldukça yardımı dokunan bir Framework’tür.
+
+SORU 5
+
+Spring Application Framework içerisinde kullanılan pattern’lar ve kullanıldıkları yerler;
+
+Factory Method: BeanFactory bu pattern üzerine bina edilmiştir. Spring managed beanların yaratılması ve bağımlılıkların sağlanmasında kullanılır.
+
+Singleton: Yaratılan bean’ler default olarak container genelinde tek bir instance’a sahip olmaktadırlar. Spring’in Singleton implemantasyonu GOF Singleton pattern’ından scope olarak biraz daha farklıdır.
+
+Prototype: İstendiği takdirde ApplicationContext herhangi bir bean tanımından her getBean(‘beanName’) ile erişimde yeni bir instance yaratmaktadır. Bean tanımı burada tam bir prototype örüntüsüdür
+.
+Proxy: Spring Application Framework’ün en çok faydalandığı pattern diyebiliriz. Scoped bean oluşturmada, Spring AOP kabiliyetinin sunulmasında, TX kabiliyetinin implemantasyonunda hep bu pattern kullanılmaktadır.
+
+Template Method: Spring’in veri erişim altyapısı bu pattern üzerine kuruldur. JdbcTemplate, HibernateTemplate, JpaTemplate, RestTemplate…
+
+Observer: ApplicationContext’in event yönetimi tam bir publish subscribe örneğidir. ApplicationContext bir event medium rolündedir. Bir grup spring managed bean ApplicationContext vasıtası ile ApplicationListener tipindeki diğer bir grup bean’lere event notifikasyonunda bulunabilirler.
+
+Mediator: Bir önceki pattern’da ApplicationContext’in event medium rolünde olduğunu söylemiştik. Bu sayede birbirleri ile haberleşmek isteyen bean’lar loosely coupled halde kalabilmektedirler. Sadece bildikleri ApplicationContext’in kendisidir, yani mediator.
+
+Front Controller: Spring MVC Framework’ün iskeletini oluşturan DispatcherServlet bu pattern’ın bire bir karşılığıdır.
+
+
+
+
+
+
+
