@@ -27,6 +27,8 @@ public class Main {
 
         }
 
+        // ödevi bu şekilde devam ettirecektim fakat bazı sebeplerden dolayı devam edemediğim için burda kalmış oldu :(
+
 
 
 
